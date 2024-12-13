@@ -1,2 +1,15 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.header-menu{
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+background-color: red;
+z-index: 2;
+
+&__container{
+  @include container;
+}
+}

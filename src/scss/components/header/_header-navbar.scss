@@ -1,2 +1,6 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.header-navbar__btn{
+  display: none;
+}
