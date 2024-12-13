@@ -1,6 +1,41 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
-.header-navbar__btn{
-  display: none;
+
+.header-navbar {
+  flex-grow: 1;
+
+  &__btn {
+    display: none;
+  }
+
+  &__list {
+    display: grid;
+    justify-content: end;
+
+    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+    // display: flex;
+    // justify-content: flex-end;
+    @include unlist;
+  }
+
+  &__item {
+    margin: $gap $gap-sm;
+  }
+
+  &__link {
+    display: block;
+
+    padding: $gap $gap-sm;
+
+    transition: color 0.5s;
+    letter-spacing: 0.1em;
+
+    font-size: 18px;
+
+    &:hover,
+    &:focus {
+      color: $color-accent;
+    }
+  }
 }

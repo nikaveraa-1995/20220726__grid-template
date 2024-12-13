@@ -33,6 +33,7 @@
   border: 0;
 }
 
+
 @mixin unlist($m: 0, $p: 0) {
   margin: $m;
   padding: $p;
@@ -50,11 +51,4 @@
 
 @mixin box-shadow {
   box-shadow: -3px 3px 20px -10px darken($color-gray-dark, 40%);
-}
-
-@mixin container{
-  max-width: $ul;
-  padding-left: $gap;
-  padding-right: $gap;
-  margin: 0 auto;
 }
