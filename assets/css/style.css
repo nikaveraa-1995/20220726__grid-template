@@ -186,6 +186,7 @@ h1{
   font-family:"Roboto Slab", serif;
   font-size:3.75rem;
   font-weight:300;
+  line-height:1.2em;
 }
 
 .btn{
@@ -221,7 +222,9 @@ h1{
   padding:150px 0;
   color:#ffffff;
   background-color:#2d3651;
-  background-image:url(../images/img-header.png);
+  background-image:url(../images/img-header@2x.png);
+  background-position:center;
+  background-size:cover;
 }
 
 .header-content{
@@ -230,7 +233,7 @@ h1{
   top:0;
 }
 .header-content__title{
-  margin:0 0 66px;
+  margin:0 0 53px;
   text-align:center;
 }
 .header-content__actions{
@@ -261,13 +264,13 @@ h1{
 }
 
 .header-logo{
-  letter-spacing:0.25em;
-  font-size:24px;
+  letter-spacing:0.22em;
+  font-size:1.5rem;
 }
 .header-logo__accent{
   display:inline-block;
-  margin-right:7px;
-  padding:17px 5px 17px 5px;
+  margin-right:4px;
+  padding:14px 1px 13px 5px;
   border:3px solid #d53d27;
 }
 
@@ -286,7 +289,7 @@ h1{
           justify-content:end;
   grid-template-columns:repeat(auto-fit, minmax(50px, -webkit-max-content));
   grid-template-columns:repeat(auto-fit, minmax(50px, max-content));
-  margin:0;
+  margin:0 -20px 0 0;
   padding:0;
   list-style:none;
 }

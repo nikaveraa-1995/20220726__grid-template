@@ -16,7 +16,7 @@
     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
     // display: flex;
     // justify-content: flex-end;
-    @include unlist;
+    @include unlist(0 -20px 0 0);
   }
 
   &__item {
