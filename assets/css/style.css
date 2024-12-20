@@ -199,18 +199,36 @@ h1{
   -webkit-box-pack:center;
       -ms-flex-pack:center;
           justify-content:center;
-  min-width:250px;
   height:60px;
   padding:0.5em, 1em;
   -webkit-transition:background-color 0.5s;
   transition:background-color 0.5s;
   letter-spacing:0.1em;
   border:2px solid #ffffff;
-  background-color:rgba(255, 255, 255, 0.1);
   font-size:18px;
 }
 .btn:hover, .btn:focus{
   background-color:#d66926;
+}
+.btn--light{
+  min-width:250px;
+  background-color:rgba(255, 255, 255, 0.1);
+}
+.btn--primary{
+  min-width:350px;
+  border:2px solid #2d3651;
+  background-color:rgba(45, 54, 81, 0.8);
+}
+
+.hidden{
+  position:absolute;
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  border:0;
 }
 
 .header{
@@ -309,8 +327,172 @@ h1{
 }
 
 .header-overlay{
-  position:absolute;
   opacity:0.8;
   background-color:#2d3651;
-  inset:0;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+
+.skills{
+  padding:10px;
+}
+.skills__container{
+  display:grid;
+  margin-bottom:20px;
+  gap:10px;
+  grid-template-areas:"a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+  grid-template-columns:repeat(4, 1fr);
+  grid-template-rows:repeat(3, 350px);
+}
+.skills__actions{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  margin-bottom:30px;
+}
+
+.skill-item{
+  position:relative;
+  overflow:hidden;
+  background-color:#2d3651;
+}
+.skill-item__title{
+  position:relative;
+  z-index:1;
+  margin:0;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.skill-item__link{
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-align:center;
+      -ms-flex-align:center;
+          align-items:center;
+  -webkit-box-pack:center;
+      -ms-flex-pack:center;
+          justify-content:center;
+  height:100%;
+  padding:1em;
+  -webkit-transition:color 0.5s;
+  transition:color 0.5s;
+}
+.skill-item__image{
+  -webkit-transition:-webkit-transform 0.5s;
+  transition:-webkit-transform 0.5s;
+  transition:transform 0.5s;
+  transition:transform 0.5s, -webkit-transform 0.5s;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.skill-item__overlay{
+  -webkit-transition:opacity 0.5s;
+  transition:opacity 0.5s;
+  opacity:0.8;
+  background-color:#2d3651;
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+}
+.skill-item:hover .skill-item__overlay{
+  opacity:0.95;
+}
+.skill-item:hover .skill-item__image{
+  -webkit-transform:scale(1.1);
+      -ms-transform:scale(1.1);
+          transform:scale(1.1);
+}
+.skill-item:hover .skill-item__link{
+  color:#d66926;
+}
+
+.skill-item:nth-of-type(1){
+  grid-area:a1;
+}
+
+.skill-item:nth-of-type(2){
+  grid-area:a2;
+}
+
+.skill-item:nth-of-type(3){
+  grid-area:a3;
+}
+
+.skill-item:nth-of-type(4){
+  grid-area:a4;
+}
+
+.skill-item:nth-of-type(5){
+  grid-area:a5;
+}
+
+.skill-item:nth-of-type(6){
+  grid-area:a6;
+}
+
+.skill-item:nth-of-type(7){
+  grid-area:a7;
+}
+
+.skill-item:nth-of-type(8){
+  grid-area:a8;
+}
+
+.skill-item:nth-of-type(9){
+  grid-area:a9;
+}
+
+@media (min-height: 691px){
+  .skills__container{
+    grid-auto-rows:20vh;
+  }
+}
+
+@media (min-width: 992px){
+  .skills__container{
+    grid-template-areas:"a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
+    grid-template-columns:repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px){
+  .skills__container{
+    grid-template-areas:"a1 a1 a2 " "a3 a4 a4" "a5 a5 a6" "a7 a8 a6" "a7 a9 a9";
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) and (min-width: 576px){
+  .skills__container{
+    grid-template-areas:"a1 a2 " "a3 a2" "a4 a4" "a5 a6" "a5 a7" "a8 a9";
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media (max-height: 690px){
+  .skills__container{
+    grid-auto-rows:calc(230px - 13.33333vh);
+  }
+}
+
+@media (max-width: 575px){
+  .skills__container{
+    grid-template-areas:"a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
+    grid-template-columns:1fr;
+  }
 }
