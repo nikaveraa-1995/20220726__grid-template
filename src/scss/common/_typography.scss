@@ -29,23 +29,42 @@ h1 {
   letter-spacing: 0.08em;
 
   font-family: $font-header;
-  font-size: 3.75rem;
   font-weight: 300;
   line-height: 1.2em;
+  // ЭТО ВАРИАНТ С МИКСИНАМИ И ОНИ ВЫНЕСЕНЫ В ФАЙЛЕ МИКСИН
+  // @mixin lg-min{
+  //   @media (min-width: $lg){
+  //     @content;
+  //   }
+  // }
+  // @mixin lg-md{
+  //   @media (max-width: $lg - 1px) and (min-width: $md){
+  //     @content;
+  //   }
+  // }
+  // @mixin md{
+  //   @media (max-width: $md - 1px){
+  //     @content;
+  //   }
+  // }
+  // ЭТО 2-ОЙ ВАРИАНТ НЕ ЧЕРЕЗ МИКСИНЫ
+  // @media (min-width: $lg){
+  //   font-size: 3.75rem;
+  // }
+  //   @media (max-width: $lg - 1px) and (min-width: $md) {
+  // font-size: 2.5rem;
+  //   }
+  // @media (max-width: $md - 1px){
+  //   font-size: 1.875rem;
+  // }
+
+  @include lg-min {
+    font-size: 3.75rem;
+  }
+  @include lg-md {
+    font-size: 2.5rem;
+  }
+  @include md {
+    font-size: 1.875rem;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @use "../presets" as *;
-// @use "../mixins" as *;
