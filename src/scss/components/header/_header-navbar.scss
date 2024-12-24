@@ -2,18 +2,20 @@
 @use "../../mixins" as *;
 
 
+
 .header-navbar {
   flex-grow: 1;
 
   &__btn {
    // ЭТО СТИЛЬ БУРГЕР МЕНЮ
+   position: relative;
+    align-items: center;
+   display: flex;
+   justify-content: center;
     width: 50px;
     height: 50px;
     margin: 25px 0 25px auto;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    
     cursor: pointer;
     transition: all .2s ease-in-out;
     border:3px solid #fff;
@@ -21,14 +23,14 @@
     @include md-min{
       display: none;
     }
-  
 
     &-row{
+      position: absolute;
       display: block;
+      background: #fff;
       width: 25px;
       height: 4px;
-      position: absolute;
-      background: #fff;
+      
       border-radius: 3px;
       transition: all .2s ease-in-out; 
       &::before, &::after{
@@ -45,63 +47,81 @@
       }
       &::after{
         transform: translateY(8px);
-      }
-     
+      } 
+    }
+
+ &--active {
+  border: 3px solid #fa00c4;
+  // стили для активного состояния
+  .header-navbar__btn-row {
+    transform: translateX(-25px);
+    background: transparent;
+
+    &:before {
+      transform: rotate(45deg) translate(17.5px, -17.5px);
+      background: #fa00c4;
+    }
+
+    &:after {
+      transform: rotate(-45deg) translate(17.5px, 17.5px);
+      background: #fa00c4;
+    }
+  }
+
+  }
+}
+   
+  &__list {
+    
+
+    @include md-min{
+      @include unlist(0 -20px 0 0);
+      display: grid;
+      justify-content: end;
+      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      
+    }
+    @include md{
+      display: none; 
+      @include unlist; 
+      background-color: rgba($color-gray-dark, 0.95);
+      position: absolute;
+      right: 20px;
+      top: 100%;
+      text-align: right;
+      @include box-shadow;    
     }
     
-  
-  }
-  
-   
-       
-  &__list {
-    @include md{
-      display: none;
-    }
-    display: grid;
-    justify-content: end;
-
-    grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
-    // display: flex;
-    // justify-content: flex-end;
-    @include unlist(0 -20px 0 0);
+    
   }
 
   &__item {
     margin: $gap $gap-sm;
+
+    @include md{
+      margin: $gap $gap-sm;
+    }
   }
 
   &__link {
     display: block;
-
-    padding: $gap $gap-sm;
-
-    transition: color 0.5s;
-    letter-spacing: 0.1em;
-
     font-size: 18px;
+    letter-spacing: 0.1em;
+    transition: color 0.5s;
+
+    @include md-min{
+      padding: $gap $gap-sm;
+    }
+
+    @include md{
+      padding: $gap-sm $gap;
+    }
 
     &:hover,
     &:focus {
       color: $color-accent;
     }
   }
-}
-
-// ВПИСАТЬ В ПРАВИЛА
-.header-navbar__btn--active .header-navbar__btn-row{
-  transform: translateX(-25px);
-  background: transparent;} 
-  .header-navbar__btn--active .header-navbar__btn-row:before{
-  transform: rotate(45deg) translate(17.5px, -17.5px);
-background: #fa00c4;
-}
-.header-navbar__btn--active .header-navbar__btn-row:after{
-  transform: rotate(-45deg) translate(17.5px, 17.5px);
-background: #fa00c4;
-} 
-.header-navbar__btn--active {
-  border: 3px solid #fa00c4;
 }
 
   

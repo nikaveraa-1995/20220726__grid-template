@@ -13,15 +13,14 @@
     z-index: 1;
 
     margin: 0;
-
-    @include md-min{
+    @include abs-position;
+    @include md-min {
       font-size: 1.25rem;
     }
-    @include md{
+    @include md {
       font-size: 1.125rem;
     }
-
-    @include abs-position;
+    
   }
 
   &__link {
@@ -37,8 +36,9 @@
 
   &__image {
     transition: transform 0.5s;
-background-position: center;
-background-size: cover;
+
+    background-position: center;
+    background-size: cover;
 
     @include abs-position;
   }

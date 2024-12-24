@@ -9,4 +9,5 @@ menuBtn.addEventListener('click', ()=> {
         menuBtn.classList.remove('header-navbar__btn--active');
         menuOpen=false;
     }
+    $('.header-navbar__list').stop(true, true).slideToggle(500);
 })

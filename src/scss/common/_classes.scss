@@ -13,6 +13,13 @@
 
   border: 2px solid $color-white;
 
+  @include sm-min {
+    width: 350px;
+  }
+  @include sm {
+    width: 100%;
+  }
+
 
 
   &:hover,
@@ -40,19 +47,12 @@
   }
 
   &--primary {
-    font-size: 1.125rem;
     height: 60px;
 
     border: 2px solid $color-primary;
     background-color: rgba($color-primary, 0.8);
-  }
 
-  @include sm-min{
-    width: 350px;
-  }
-
-  @include sm{
-    width: 100%;
+    font-size: 1.125rem;
   }
 }
 
