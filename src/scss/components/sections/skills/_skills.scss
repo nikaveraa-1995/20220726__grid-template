@@ -1,6 +1,7 @@
 @use "../../../presets" as *;
 @use "../../../mixins" as *;
 $local-gap: calc(40px / 3);
+$local-height: 690px;
 
 .skills {
   @include sm-min {
@@ -13,9 +14,8 @@ $local-gap: calc(40px / 3);
   &__container {
     display: grid;
 
-    margin-bottom: 20px;
+    margin-bottom: $gap;
 
-    gap: $gap-sm;
     @include lg-min {
       grid-template-areas: "a1 a1 a2 a3" "a4 a5 a5 a6" "a7 a8 a9 a6";
       grid-template-columns: repeat(4, 1fr);
@@ -35,7 +35,6 @@ $local-gap: calc(40px / 3);
     @include sm {
       gap: $gap;
       grid-template-areas: "a1" "a2" "a3" "a4" "a5" "a6" "a7" "a8" "a9";
-      grid-template-columns: 1fr;
     }
 
     @media (min-height: 691px) {
@@ -43,7 +42,7 @@ $local-gap: calc(40px / 3);
     }
 
     @media (max-height: 690px) {
-      grid-auto-rows: (230px - 33.33333px);
+      grid-auto-rows: (250px - 33.33333px);
     }
   }
 
@@ -52,7 +51,7 @@ $local-gap: calc(40px / 3);
     justify-content: center;
 
     @include sm-min {
-      margin-bottom: 30px;
+      margin-bottom: $gap-lg;
     }
   }
 }

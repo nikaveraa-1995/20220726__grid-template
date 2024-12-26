@@ -8,6 +8,7 @@
 }
 
 html {
+  overflow-y: scroll;
   color: $color-primary;
 
   font-family: $font-main;
@@ -26,7 +27,7 @@ a {
 }
 
 h1 {
-  letter-spacing: 0.08em;
+  letter-spacing: 0.078em;
 
   font-family: $font-header;
   font-weight: 300;

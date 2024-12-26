@@ -1,0 +1,30 @@
+@use "../../presets"  as*;
+@use "../../mixins" as*;
+
+.about{
+  background-color: $color-gray-light;
+
+  &__container{
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    @extend %container;
+  }
+
+  &__deskription{
+    width: 936px;
+height: 575px;
+font-size: 18px;
+letter-spacing: 1px;
+line-height: 24px;
+color: #637588;
+font-weight: 400;
+font-family: "Roboto";
+
+    ::before{
+      background-color: #000000;
+border: 1px solid #707070;
+right: -50px;
+    }
+  }
+}

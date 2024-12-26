@@ -1,8 +1,6 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
-
-
 .header-navbar {
   flex-grow: 1;
 
@@ -75,38 +73,41 @@
     
 
     @include md-min{
-      @include unlist(0 -20px 0 0);
+      @include unlist(0 -10px 0 0);
       display: grid;
       justify-content: end;
-      grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
+      gap: $gap;
+      grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
       
     }
     @include md{
       display: none; 
-      @include unlist; 
+     
       background-color: rgba($color-gray-dark, 0.95);
       position: absolute;
       right: 20px;
       top: 100%;
       text-align: right;
-      @include box-shadow;    
+      overflow: hidden;
+      @include unlist; 
+      @include box-shadow;  
+      
     }
     
     
   }
 
   &__item {
-    margin: $gap $gap-sm;
 
     @include md{
-      margin: $gap $gap-sm;
+      margin: $gap;
     }
   }
 
   &__link {
     display: block;
-    font-size: 18px;
-    letter-spacing: 0.1em;
+    font-size: 1.125rem;
+    letter-spacing: 0.09em;
     transition: color 0.5s;
 
     @include md-min{

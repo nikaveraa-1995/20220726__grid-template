@@ -1,5 +1,6 @@
 @use "../../../presets" as *;
 @use "../../../mixins" as *;
+
 .skill-item {
   position: relative;
 
@@ -9,18 +10,20 @@
 
 
   &__title {
-    position: relative;
+    
     z-index: 1;
-
+    letter-spacing: 0.1em;
     margin: 0;
+
+    font-family: $font-main;
+
     @include abs-position;
     @include md-min {
       font-size: 1.25rem;
     }
     @include md {
       font-size: 1.125rem;
-    }
-    
+    }   
   }
 
   &__link {
@@ -29,7 +32,7 @@
     justify-content: center;
 
     height: 100%;
-    padding: 1em;
+    padding: $gap;
 
     transition: color 0.5s;
   }
