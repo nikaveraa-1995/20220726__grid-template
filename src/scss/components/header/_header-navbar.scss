@@ -49,7 +49,8 @@
     }
 
  &--active {
-  border: 3px solid #fa00c4;
+  border: 3px solid #fff;
+  
   // стили для активного состояния
   .header-navbar__btn-row {
     transform: translateX(-25px);
@@ -57,12 +58,12 @@
 
     &:before {
       transform: rotate(45deg) translate(17.5px, -17.5px);
-      background: #fa00c4;
+      background: $color-highlight;
     }
 
     &:after {
       transform: rotate(-45deg) translate(17.5px, 17.5px);
-      background: #fa00c4;
+      background: $color-highlight;
     }
   }
 

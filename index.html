@@ -81,7 +81,7 @@
     <main>
       <section class="skills">
         <div class="skills__container">
-          <h2 class="hidden">Наши навыки, скилы</h2>
+          <h2 class="visually-hidden">Наши навыки, скилы</h2>
 
           <article class="skill-item">
             <h3 class="skill-item__title">
@@ -257,7 +257,47 @@
         </div>
       </section>
 
-      <section class="subskribe"></section>
+      <section class="subskribe">
+        <div class="subskribe__container">
+          <h2 class="subskribe__title visually-hidden">Contact form</h2>
+
+          <form class="subskribe__form" action="/url" method="post" novalidate>
+            <div class="subskribe-item">
+              <label class="subskribe-item__label visually-hidden" for="name"
+                >Name</label
+              >
+              <input
+                class="subskribe-item__control"
+                id="name"
+                aria-required="true"
+                name="name"
+                placeholder="Your name"
+                required
+                type="text"
+              />
+            </div>
+            <div class="subskribe-item">
+              <label class="subskribe-item__label visually-hidden" for="email"
+                >Email</label
+              >
+              <input
+                class="subskribe-item__control"
+                id="email"
+                aria-required="true"
+                name="email"
+                placeholder="Your email"
+                required
+                type="email"
+              />
+            </div>
+            <div class="subskribe-item">
+              <button class="subskribe-item__btn" type="submit">
+                Subskribe
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
       <section></section>
     </main>
 

@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  color: $color-primary;
+  color: $color-gray;
   background-color: $color-white;
 }
 
@@ -68,4 +68,14 @@ h1 {
   @include md {
     font-size: 1.875rem;
   }
+}
+
+h2{
+ font-size: 2.5rem;
+letter-spacing: 0.1em;
+margin: 0 0 1.5em;
+line-height: 48px;
+color: #2d3651;
+font-weight: 700;
+font-family: "Roboto Slab";
 }
