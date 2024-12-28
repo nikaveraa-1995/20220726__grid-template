@@ -54,7 +54,7 @@ gap: $gap;
     background-color: rgba($color-white, 0.05);
 
     @include lg-min {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
     }
 
     &::placeholder {
@@ -95,7 +95,7 @@ gap: $gap;
     background-color: rgba($color-white, 0.05);
 
     @include lg-min {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
     }
 
     &:hover,
