@@ -5,117 +5,127 @@
   flex-grow: 1;
 
   &__btn {
-   // ЭТО СТИЛЬ БУРГЕР МЕНЮ
-   position: relative;
+    // ЭТО СТИЛЬ БУРГЕР МЕНЮ
+    position: relative;
+
+    display: flex;
     align-items: center;
-   display: flex;
-   justify-content: center;
+    justify-content: center;
+
     width: 50px;
     height: 50px;
     margin: 25px 0 25px auto;
-    
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    border:3px solid #fff;
 
-    @include md-min{
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    border: 3px solid #ffffff;
+
+    @include md-min {
       display: none;
     }
 
-    &-row{
+    &-row {
       position: absolute;
+
       display: block;
-      background: #fff;
+
       width: 25px;
       height: 4px;
-      
+
+      transition: all 0.2s ease-in-out;
+
       border-radius: 3px;
-      transition: all .2s ease-in-out; 
-      &::before, &::after{
-        content: ''; 
+      background: #ffffff;
+      &::before,
+      &::after {
         position: absolute;
+
         width: 25px;
         height: 4px;
-        background: #fff;
+
+        content: "";
+        transition: all 0.2s ease-in-out;
+
         border-radius: 3px;
-        transition: all .2s ease-in-out;
+        background: #ffffff;
       }
-      &::before{
+      &::before {
         transform: translateY(-8px);
       }
-      &::after{
+      &::after {
         transform: translateY(8px);
-      } 
+      }
     }
 
- &--active {
-  border: 3px solid #fff;
-  
-  // стили для активного состояния
-  .header-navbar__btn-row {
-    transform: translateX(-25px);
-    background: transparent;
+    &--active {
+      border: 3px solid #ffffff;
 
-    &:before {
-      transform: rotate(45deg) translate(17.5px, -17.5px);
-      background: $color-highlight;
-    }
+      // стили для активного состояния
+      .header-navbar__btn-row {
+        transform: translateX(-25px);
 
-    &:after {
-      transform: rotate(-45deg) translate(17.5px, 17.5px);
-      background: $color-highlight;
+        background: transparent;
+
+        &:before {
+          transform: rotate(45deg) translate(17.5px, -17.5px);
+
+          background: $color-highlight;
+        }
+
+        &:after {
+          transform: rotate(-45deg) translate(17.5px, 17.5px);
+
+          background: $color-highlight;
+        }
+      }
     }
   }
 
-  }
-}
-   
   &__list {
-    
-
-    @include md-min{
-      @include unlist(0 -10px 0 0);
+    @include md-min {
       display: grid;
       justify-content: end;
+
       gap: $gap;
       grid-template-columns: repeat(auto-fit, minmax(40px, max-content));
-      
+      @include unlist(0 -10px 0 0);
     }
-    @include md{
-      display: none; 
-     
-      background-color: rgba($color-gray-dark, 0.95);
+    @include md {
       position: absolute;
-      right: 20px;
       top: 100%;
-      text-align: right;
+      right: 20px;
+
+      display: none;
       overflow: hidden;
-      @include unlist; 
-      @include box-shadow;  
-      
+
+      text-align: center;
+
+      background-color: rgba($color-gray, 0.90);
+
+      @include unlist;
+      @include box-shadow;
     }
-    
-    
   }
 
   &__item {
-
-    @include md{
+    @include md {
       margin: $gap;
     }
   }
 
   &__link {
     display: block;
-    font-size: 1.125rem;
-    letter-spacing: 0.09em;
-    transition: color 0.5s;
 
-    @include md-min{
+    transition: color 0.5s;
+    letter-spacing: 0.09em;
+
+    font-size: 1.125rem;
+
+    @include md-min {
       padding: $gap $gap-sm;
     }
-
-    @include md{
+    @include md {
       padding: $gap-sm $gap;
     }
 
@@ -125,12 +135,3 @@
     }
   }
 }
-
-  
-
-
-
-
-
-
-

@@ -35,12 +35,10 @@
 
 
 @mixin unlist($m: 0, $p: 0) {
-  list-style: none;
-  padding: $p;
   margin: $m;
-  
+  padding: $p;
 
-  
+  list-style: none;
 }
 
 @mixin abs-position ($top: 0, $right: 0, $bottom: 0, $left: 0) {

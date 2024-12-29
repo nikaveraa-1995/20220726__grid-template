@@ -1,18 +1,16 @@
 @use "../../presets"  as*;
 @use "../../mixins" as*;
 
-.about{
+.about {
   background-color: $color-gray-light;
 
   @extend %section;
 
-  &__container{
-
+  &__container {
     display: grid;
-  
-    @extend %container;
 
-    @include lg-min{
+    @extend %container;
+    @include lg-min {
       gap: $gap-x5;
       grid-template-columns: 1fr 271px;
     }
@@ -26,64 +24,66 @@
     }
   }
 
-  &__content{
+  &__content {
     @include sm {
       margin-bottom: $gap-x2;
     }
   }
 
-  &__deskription{
+  &__deskription {
     position: relative;
+
     text-align: justify;
     letter-spacing: 0.05em;
+
     line-height: 1.333333em;
 
-    @include md-min{
+    @include md-min {
       font-size: 1.125rem;
     }
+    @include sm-min {
+      ::before {
+        // ЭТО ПАЛОЧКА МЕЖДУ ТЕКСТОМ И КАРТИНКОЙ
+        position: absolute;
+        top: 5px;
 
-@include sm-min {
-  ::before{
-    // ЭТО ПАЛОЧКА МЕЖДУ ТЕКСТОМ И КАРТИНКОЙ
-    position: absolute;
+        width: 2px;
+        height: 50%;
+        min-height: 200px;
 
-    top: 5px;
-    width: 2px;
-    height: 50%;
-min-height: 200px;
+        content: "";
 
-content: '';
+        background-color: $color-gray;
 
-background-color: $color-gray;
-
-@include lg-min {
-  right: -$gap * 2.5;
-}
-@include lg-md {
-  right: -$gap * 1.5;
-}
-@include md-sm {
-  right: -$gap;
-}
-  }   
-} 
-p:last-of-type {
-  margin-bottom: 0;
-}
+        @include lg-min {
+          right: -$gap * 2.5;
+        }
+        @include lg-md {
+          right: -$gap * 1.5;
+        }
+        @include md-sm {
+          right: -$gap;
+        }
+      }
+    }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
-  &__picture{
-text-align: center;
+  &__picture {
+    text-align: center;
 
-@include md-sm {
-  margin-top: $gap-x4;
-}
+    @include md-sm {
+      margin-top: $gap-x4;
+    }
   }
 
-  &__image{
-    height: auto;
-    max-width: 100%;
+  &__image {
     width: auto;
+    max-width: 100%;
+    height: auto;
+
     @include sm-min {
       max-height: 488px;
     }
@@ -91,4 +91,4 @@ text-align: center;
       max-height: 400px;
     }
   }
-  }
+}
